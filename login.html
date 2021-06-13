@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Form Tutorial</title>
+		<style>
+		.login-form {
+			width: 300px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+
+			CREATE TABLE IF NOT EXISTS `accounts` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO `accounts` (`id`, `username`, `password`, `email`) VALUES (1, 'test', 'test', 'test@test.com');
+
+ALTER TABLE `accounts` ADD PRIMARY KEY (`id`);
+ALTER TABLE `accounts` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+		}
+		.login-form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.login-form input[type="password"],
+		.login-form input[type="text"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		.login-form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="login-form">
+			<h1>Login Form</h1>
+			<form action="auth" method="POST">
+				<input type="text" name="username" placeholder="Username" required>
+				<input type="password" name="password" placeholder="Password" required>
+				<input type="submit">
+			</form>
+		</div>
+	</body>
+</html>
